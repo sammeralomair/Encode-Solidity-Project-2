@@ -10,13 +10,13 @@ interface connectToWalletOutput {
  * Connect to the environment's wallet.
  * @returns {connectToWalletOutput} The wallet and signer
  */
-export async function connectToWallet(network: ethers.providers.Networkish = "ropsten") : Promise<connectToWalletOutput> {
+export async function connectToWallet(network: ethers.providers.Networkish = "goerli") : Promise<connectToWalletOutput> {
     // Connect to environment's wallet
     const wallet =
     process.env.MNEMONIC && process.env.MNEMONIC.length > 0
         ? ethers.Wallet.fromMnemonic(process.env.MNEMONIC)
         : (process.env.PRIVATE_KEY ? 
-            new ethers.Wallet(process.env.PRIVATE_KEY )
+            new ethers.Wallet(process.env.PRIVATE_KEY)
             : null);
             
     // Validate wallet exists
@@ -25,9 +25,12 @@ export async function connectToWallet(network: ethers.providers.Networkish = "ro
     }
 
     // Get signer
+    const providerOptions = {
+        alchemy: process.env.ALCHEMY_API_KEY
+    }
     console.log(`Using address ${wallet.address}`);
     console.log(`Using network ${network}`);
-    const provider = ethers.providers.getDefaultProvider(network);
+    const provider = ethers.providers.getDefaultProvider(network, providerOptions);
     const signer = wallet.connect(provider);
     
     // Check signer's balance

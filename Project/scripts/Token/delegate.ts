@@ -14,11 +14,8 @@ async function main() {
   // Get inputs
   if (process.argv.length < 3) throw new Error("Token address missing");
   const tokenAddress = process.argv[2];
-  if (process.argv.length < 4) throw new Error("Receiver address missing");
-  const receiverAddress = process.argv[3];
-  if (process.argv.length < 5) throw new Error("Token amount missing");
-  const tokenAmount = process.argv[4];
-  const tokenAmountBN = ethers.utils.parseEther(tokenAmount);
+  if (process.argv.length < 4) throw new Error("Delegatee wallet address missing");
+  const delegateeWalletAddress = process.argv[3];
 
   console.log(
     `Attaching token contract interface to tokenAddress=${tokenAddress}`
@@ -35,8 +32,8 @@ async function main() {
   ) as TweeterCoin;
 
   // Process mint
-  console.log(`Processing minting for address=${wallet.address} to receiver=${receiverAddress} of amount=${tokenAmount} on tokenAddress=${tokenAddress}`);
-  const tx = await tokenContract.mint(receiverAddress, tokenAmountBN);
+  console.log(`Processing delgation from walletAddr=${wallet.getAddress()} to delegateeWalletAddress=${delegateeWalletAddress} tokenAddress=${tokenAddress}`);
+  const tx = await tokenContract.delegate(delegateeWalletAddress);
   await tx.wait();
   console.log(`Transaction completed. Hash: ${tx.hash}`);
 

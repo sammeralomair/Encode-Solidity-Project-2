@@ -9,11 +9,13 @@
     "createWallet": "ts-node --files ./scripts/createWallet",
     "castVote": "ts-node --files ./scripts/Ballot/castVote",
     "delegateVote": "ts-node --files ./scripts/Ballot/delegateVote",
-    "deployment": "ts-node --files ./scripts/Token/deployment",
+    "deployBallot": "ts-node --files ./scripts/Token/deployment",
     "queryProposals": "ts-node --files ./scripts/Ballot/queryProposals",
     "queryWinningProposal": "ts-node --files ./scripts/Ballot/queryWinningProposal",
-    "mint": "ts-node --files ./scripts/Token/mint"
-
+    "deployToken": "ts-node --files ./scripts/Token/deployment",
+    "mint": "ts-node --files ./scripts/Token/mint",
+    "getVotes": "ts-node --files ./scripts/Token/getVotes",
+    "delegate": "ts-node --files ./scripts/Token/delegate"
   },
   "dependencies": {
     "@openzeppelin/contracts": "^4.5.0",
