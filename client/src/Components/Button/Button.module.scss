@@ -1,0 +1,18 @@
+@import '../../Colors.module.scss';
+
+.button {
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    padding: 12px 23px;
+    background-color: $primary;
+    border-radius: 8px;
+    color: white;
+    font-weight: bold;
+
+    &:hover {
+        cursor: pointer;
+        background-color: darken($primary, 10%);
+        color: $font;
+    }
+}
