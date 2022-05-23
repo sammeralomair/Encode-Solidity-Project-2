@@ -1,0 +1,15 @@
+@import '../Colors.module.scss';
+
+.titleBar {
+    height: 100px;
+    padding: 0px 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid $border;
+}
+
+.title {
+    font-size: 24px;
+    font-weight: bold;
+}
