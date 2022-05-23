@@ -9,8 +9,7 @@
     "createWallet": "ts-node --files ./scripts/createWallet",
     "castVote": "ts-node --files ./scripts/Ballot/castVote",
     "delegateVote": "ts-node --files ./scripts/Ballot/delegateVote",
-    "deployment": "ts-node --files ./scripts/Ballot/deployment",
-    "giveVotingRights": "ts-node --files ./scripts/Ballot/giveVotingRights",
+    "deployment": "ts-node --files ./scripts/Token/deployment",
     "queryProposals": "ts-node --files ./scripts/Ballot/queryProposals",
     "queryWinningProposal": "ts-node --files ./scripts/Ballot/queryWinningProposal"
   },
