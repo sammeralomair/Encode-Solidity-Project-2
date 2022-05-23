@@ -32,8 +32,8 @@ async function main() {
   });
   
   const customBallotFactory = new ethers.ContractFactory(
-    ballotJson.abi,
-    ballotJson.bytecode,
+    customBallotJson.abi,
+    customBallotJson.bytecode,
     signer
   );
   const customBallotContract = await customBallotFactory.deploy(

@@ -12,7 +12,7 @@ import { connectToWallet } from "../utils";
 async function main() {
   // Get inputs
   if (process.argv.length < 3) throw new Error("Ballot address missing");
-  const ballotAddress = process.argv[2];
+  const customBallotAddress = process.argv[2];
   
   // Connect to wallet
   const { signer } = await connectToWallet();

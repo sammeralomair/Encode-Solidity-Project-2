@@ -25,7 +25,7 @@ async function main() {
   const { signer } = await connectToWallet();
 
   // Deploy wallet
-  console.log("Deploying CustomBallot contract");
+  console.log("Deploying Token contract");
   console.log("Proposals: ");
   proposals.forEach((element, index) => {
     console.log(`Proposal N. ${index + 1}: ${element}`);
