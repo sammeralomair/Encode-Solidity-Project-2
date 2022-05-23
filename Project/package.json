@@ -11,7 +11,9 @@
     "delegateVote": "ts-node --files ./scripts/Ballot/delegateVote",
     "deployment": "ts-node --files ./scripts/Token/deployment",
     "queryProposals": "ts-node --files ./scripts/Ballot/queryProposals",
-    "queryWinningProposal": "ts-node --files ./scripts/Ballot/queryWinningProposal"
+    "queryWinningProposal": "ts-node --files ./scripts/Ballot/queryWinningProposal",
+    "mint": "ts-node --files ./scripts/Token/mint"
+
   },
   "dependencies": {
     "@openzeppelin/contracts": "^4.5.0",

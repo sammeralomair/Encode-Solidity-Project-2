@@ -1,6 +1,6 @@
 import { ethers } from "ethers";
 import "dotenv/config";
-import * as tokenJson from "../../artifacts/contracts/CustomBallot.sol/CustomBallot.json";
+import * as tokenJson from "../../artifacts/contracts/Token.sol/TweeterCoin.json";
 import { connectToWallet } from "../utils";
 
 function convertStringArrayToBytes32(array: string[]) {
