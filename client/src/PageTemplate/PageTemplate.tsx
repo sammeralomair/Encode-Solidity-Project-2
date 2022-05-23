@@ -9,7 +9,7 @@ export default function PageTemplate({ children } : PageTemplateProps) {
     return (
     <div className={styles.app}>
         <TitleBar />
-        <div>
+        <div className={styles.content}>
         { children }
         </div>
     </div>

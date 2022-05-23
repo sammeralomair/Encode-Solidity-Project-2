@@ -5,4 +5,14 @@
     height: 100vh;
     background-color: $background;
     color: $font;
+    display: flex;
+    flex-direction: column;
+}
+
+.content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    flex-grow: 1;
 }
