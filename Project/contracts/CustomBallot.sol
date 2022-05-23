@@ -35,6 +35,12 @@ contract CustomBallot {
         referenceBlock = block.number;
     }
 
+    // get proposal array
+    function getProposals() public view returns(Proposal[] memory proposalsArr) {
+        proposalsArr = proposals;
+    }
+
+
     function vote(uint256 proposal, uint256 amount) external {
         uint256 votingPowerAvailable = voteToken.getPastVotes(
             msg.sender,
