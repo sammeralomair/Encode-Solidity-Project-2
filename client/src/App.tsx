@@ -1,7 +1,8 @@
 import CreateBallot from "./CreateBallot/CreateBallot";
+import ViewBallot from "./ViewBallot/ViewBallot";
 
 function App() {
-  return (<CreateBallot />);
+  return (<ViewBallot />);
 }
 
 export default App;
