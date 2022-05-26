@@ -1,0 +1,10 @@
+@import '../../../Colors.module.scss';
+
+.textInput {
+    padding: 12px 20px;
+    background-color: rgba($primary, 0.15);
+    border: none;
+    border-radius: 6px;
+    color: $font;
+    font-size: 1rem;
+}

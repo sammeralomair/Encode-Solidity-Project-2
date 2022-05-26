@@ -1,0 +1,16 @@
+.deletableListInput {
+    display: flex;
+    align-items: center;
+}
+
+.deletableItem {
+    display: flex;
+}
+
+.actionButton {
+    margin-left: 20px;
+
+    &:hover {
+        cursor: pointer;
+    }
+}
