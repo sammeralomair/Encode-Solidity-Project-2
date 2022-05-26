@@ -1,3 +1,6 @@
+import { useEffect } from "react";
+import { useParams } from "react-router-dom";
+
 import Button, { ButtonStyle } from "../Components/Button/Button";
 import ContentWrapper from "../Components/ContentWrapper/ContentWrapper";
 import PageTemplate from "../PageTemplate/PageTemplate";
@@ -10,6 +13,12 @@ interface Ballot {
 }
 
 export default function ViewBallot() {
+    const { ballotAddress } = useParams();
+
+    useEffect(() => {
+        alert(ballotAddress)
+    }, [ballotAddress])
+
     const ballot : Ballot = {
         title: "Favorite Color?",
         options: [

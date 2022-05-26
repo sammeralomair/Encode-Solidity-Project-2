@@ -48,7 +48,7 @@ interface FDeletableListProps {
     name: string,
     label: string
 }
-function FDeletableList({ name } : FDeletableListProps) {
+function FDeletableList({ name, label } : FDeletableListProps) {
     const [optionToAdd, setOptionToAdd] = useState('');
     const [field, _meta, helpers] = useField(name);
 
@@ -66,7 +66,7 @@ function FDeletableList({ name } : FDeletableListProps) {
     return (
     <FormGroup>
         <div>
-            <Label for={name} label="Proposal Options" />
+            <Label for={name} label={label} />
             <div className={styles.deletableListInput}>
                 <TextInput id={name} value={optionToAdd} onChange={(e) => setOptionToAdd(e.target.value)} />
                 <div className={styles.actionButton} onClick={onAddItem}>add</div>
