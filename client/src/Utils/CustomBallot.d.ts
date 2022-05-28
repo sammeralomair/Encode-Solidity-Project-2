@@ -25,6 +25,7 @@ interface CustomBallotInterface extends ethers.utils.Interface {
     "proposals(uint256)": FunctionFragment;
     "referenceBlock()": FunctionFragment;
     "spentVotePower(address)": FunctionFragment;
+    "title()": FunctionFragment;
     "vote(uint256,uint256)": FunctionFragment;
     "voteToken()": FunctionFragment;
     "votingPower()": FunctionFragment;
@@ -48,6 +49,7 @@ interface CustomBallotInterface extends ethers.utils.Interface {
     functionFragment: "spentVotePower",
     values: [string]
   ): string;
+  encodeFunctionData(functionFragment: "title", values?: undefined): string;
   encodeFunctionData(
     functionFragment: "vote",
     values: [BigNumberish, BigNumberish]
@@ -79,6 +81,7 @@ interface CustomBallotInterface extends ethers.utils.Interface {
     functionFragment: "spentVotePower",
     data: BytesLike
   ): Result;
+  decodeFunctionResult(functionFragment: "title", data: BytesLike): Result;
   decodeFunctionResult(functionFragment: "vote", data: BytesLike): Result;
   decodeFunctionResult(functionFragment: "voteToken", data: BytesLike): Result;
   decodeFunctionResult(
@@ -174,6 +177,8 @@ export class CustomBallot extends BaseContract {
       overrides?: CallOverrides
     ): Promise<[BigNumber]>;
 
+    title(overrides?: CallOverrides): Promise<[string]>;
+
     vote(
       proposal: BigNumberish,
       amount: BigNumberish,
@@ -208,6 +213,8 @@ export class CustomBallot extends BaseContract {
 
   spentVotePower(arg0: string, overrides?: CallOverrides): Promise<BigNumber>;
 
+  title(overrides?: CallOverrides): Promise<string>;
+
   vote(
     proposal: BigNumberish,
     amount: BigNumberish,
@@ -237,6 +244,8 @@ export class CustomBallot extends BaseContract {
     referenceBlock(overrides?: CallOverrides): Promise<BigNumber>;
 
     spentVotePower(arg0: string, overrides?: CallOverrides): Promise<BigNumber>;
+
+    title(overrides?: CallOverrides): Promise<string>;
 
     vote(
       proposal: BigNumberish,
@@ -297,6 +306,8 @@ export class CustomBallot extends BaseContract {
 
     spentVotePower(arg0: string, overrides?: CallOverrides): Promise<BigNumber>;
 
+    title(overrides?: CallOverrides): Promise<BigNumber>;
+
     vote(
       proposal: BigNumberish,
       amount: BigNumberish,
@@ -326,6 +337,8 @@ export class CustomBallot extends BaseContract {
       arg0: string,
       overrides?: CallOverrides
     ): Promise<PopulatedTransaction>;
+
+    title(overrides?: CallOverrides): Promise<PopulatedTransaction>;
 
     vote(
       proposal: BigNumberish,

@@ -1,4 +1,5 @@
-import React, { useState, createContext, useContext } from "react";
+import React, { useState, createContext, useContext, useEffect } from "react";
+import { ethers } from "ethers";
 
 export type EthereumWallet = {
     account: any,
@@ -20,6 +21,10 @@ interface EthereumProviderProps {
 
 export function EthereumProvider({ children } : EthereumProviderProps) {
     const [currentAccount, setCurrentAccount] = useState();
+
+    useEffect(() => {
+        checkIfWalletIsConnected();
+    }, [])
 
     const checkIfWalletIsConnected = async () => {
         try {
@@ -69,4 +74,19 @@ export const useConnectWallet = () => {
     }
 
     return connectWallet;
+}
+
+export function convertStringArrayToBytes32(array: string[]) {
+  const bytes32Array = [];
+  for (let index = 0; index < array.length; index++) {
+    bytes32Array.push(ethers.utils.formatBytes32String(array[index]));
+  }
+  return bytes32Array;
+}
+export function convertByte32ArrayToStringArray(array: string[]) {
+  const strArray = [];
+  for (let index = 0; index < array.length; index++) {
+    strArray.push(ethers.utils.parseBytes32String(array[index]));
+  }
+  return strArray;
 }

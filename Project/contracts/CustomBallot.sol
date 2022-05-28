@@ -20,14 +20,17 @@ contract CustomBallot {
 
     mapping(address => uint256) public spentVotePower;
 
+    bytes32 public title;
     Proposal[] public proposals;
     IERC20Votes public voteToken;
     uint256 public referenceBlock;
 
     constructor(
+        bytes32 proposalTitle,
         bytes32[] memory proposalNames,
         address _voteToken
     ) {
+        title = proposalTitle;
         for (uint256 i = 0; i < proposalNames.length; i++) {
             proposals.push(Proposal({name: proposalNames[i], voteCount: 0}));
         }

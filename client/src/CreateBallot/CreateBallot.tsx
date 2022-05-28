@@ -9,6 +9,7 @@ import Label from "../Components/Form/Label/Label";
 
 import styles from './CreateBallot.module.scss';
 import FormGroup from "../Components/Form/FormGroup/FormGroup";
+import { createBallot } from "../Utils/BallotContract";
 
 interface BallotProps {
     title: string,
@@ -28,6 +29,8 @@ export default function CreateBallot() {
                 initialValues={initialValues}
                 onSubmit={(values) => {
                     alert(`Creating ballot titled "${values.title}" with options "${values.options.join('", "')}"`);
+                    const contract = createBallot(values.title, values.options);
+                    console.log(contract);
                 }}
             >
                 {(props: FormikProps<BallotProps>) => (
