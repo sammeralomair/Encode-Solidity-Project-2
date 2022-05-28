@@ -1,3 +1,1 @@
-import 'dotenv/config'
-
-export const VOTE_TOKEN_CONTRACT_ADDRESS = process.env.VOTE_TOKEN_CONTRACT_ADDRESS
+export const VOTE_TOKEN_CONTRACT_ADDRESS = process.env.REACT_APP_VOTE_TOKEN_CONTRACT_ADDRESS

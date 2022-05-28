@@ -14,3 +14,8 @@
         cursor: pointer;
     }
 }
+.actionButtonDisabled {
+    &:hover {
+        cursor: not-allowed;
+    }
+}
