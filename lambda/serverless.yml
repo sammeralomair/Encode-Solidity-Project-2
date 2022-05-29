@@ -1,0 +1,21 @@
+org: rkhadder
+app: encode-project2-voting
+service: encode-project2-voting
+frameworkVersion: '3'
+
+provider:
+  name: aws
+  runtime: nodejs14.x
+
+functions:
+  mint:
+    handler: handler.mint
+    url:
+      cors: true
+    events:
+      - httpApi:
+          path: /{tokenAddress}
+          method: post
+plugins:
+  - serverless-plugin-typescript
+  - serverless-dotenv-plugin

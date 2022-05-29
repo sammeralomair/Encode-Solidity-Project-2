@@ -1,0 +1,8 @@
+{
+    "resource": "/",
+    "path": "/0x88BE0FCce95130998f88841971648c1882309Ef6",
+    "httpMethod": "POST",
+    "pathParameters": {
+        "tokenAddress": "0x88BE0FCce95130998f88841971648c1882309Ef6"
+    }
+}
